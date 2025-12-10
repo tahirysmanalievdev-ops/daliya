@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website about Daliya</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 20px 20px;
+      animation: fadeDown 1s ease forwards;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      width: 280px;
+      padding: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #444;
+      font-size: 14px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    @keyframes fadeDown {
+      0% {opacity: 0; transform: translateY(-30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeUp {
+      0% {opacity: 0; transform: translateY(30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @media(max-width: 600px){
+      header h1 { font-size: 28px; }
+      .card { width: 100%; }
+    }
+    @media (max-width: 480px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  section {
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 30px 10px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Daliya — My Friend</h1>
+    <p>a little page to show how awesome my friend Daliya is</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <img src="https://avatars.mds.yandex.net/i?id=e7447a59e763cc37733f21e1cf62222b8ee2ff48-8229244-images-thumbs&n=13" alt="fun photo">
+      <h2>Fun & Energetic</h2>
+      <p>Daliya always brings good vibes. Hanging out is never boring, and she makes everyone laugh.</p>
+    </div>
+    <div class="card">
+      <img src="https://avatars.mds.yandex.net/i?id=71594456b058ba28bfc5a7cabc9cce1084fa086d66ad8c76-12720093-images-thumbs&n=13" alt="study photo">
+      <h2>Smart & Curious</h2>
+      <p>She loves learning new things, asking questions, and always helping others when they need it.</p>
+    </div>
+    <div class="card">
+      <img src="https://avatars.mds.yandex.net/i?id=40375d96e103c2402901b941353c0e79557230f9-4518959-images-thumbs&n=13" alt="adventure photo">
+      <h2>Adventurous Spirit</h2>
+      <p>Always up for exploring new places, trying fun activities, and making every moment memorable.</p>
+    </div>
+  </section>
+
+  <footer>
+    made with respect for my friend Daliya • 2025
+  </footer>
+
+  <script>
+    // simple fade-in animation on scroll for cards
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, {threshold: 0.2});
+
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(50px)';
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+</html>
